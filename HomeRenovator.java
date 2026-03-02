@@ -87,7 +87,7 @@ System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",li
   System.out.println("\n Select flooring type: ");
   System.out.println("1) Laminate ($2.25/sq ft, 7% waste");
   System.out.println("2) Hardwood ($5.50/sq ft, 10% waste");
-  System.out.println("3) Tile ($3.90/ sq ft, 8% waste);
+  System.out.println("3) Tile ($3.90/ sq ft, 8% waste");
          int type;
          double price = 0.0;
          double waste = 0.0
