@@ -78,7 +78,7 @@ System.out.printf("Net paint area: %.2f sq ft\n",netArea);
 System.out.printf("Gallons required: %.2f \n",gallons);
 System.out.printf("Material cost(@ $%.2f/gal): $%.2f\n",PAINT_PRICE,materialCost);
 System.out.printf("Line total(with tax): $%.2f\n",lineTotal);
-System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",lineTotal);
+System.out.printf("\n[Paint module complete Added $%.2f to running total.]\n",lineTotal);
   }
   private static void flooring (Scanner sc){
   System.out.println("\n-- Flooring --");
