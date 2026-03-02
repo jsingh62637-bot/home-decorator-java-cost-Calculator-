@@ -115,7 +115,7 @@ System.out.printf("\n[Paint module complete Added $%.2f to running total.]\n",li
     double lineTotal = materialCost + tax;
     subTotal += materialCost;
     System.out.printf("\n Flooring area: %.2f sq ft\n",area);
-    System.out.printf("Adjusted area (with %.0f%% waste): %,2f sq ft\n",waste*100,adjustedArea);
+    System.out.printf("Adjusted area (with %.0f%% waste): %.2f sq ft\n",waste*100,adjustedArea);
     System.out.printf("Price per sq ft: $%.2f\n",price);
     System.out.printf("Material Cost: $%,.2f\n",materialCost);
     System.out.printf("Line total (with tax): $%,.2f\n",lineTotal);
@@ -123,7 +123,7 @@ System.out.printf("\n[Paint module complete Added $%.2f to running total.]\n",li
   }
   
     private static void viewTotals() {
-      double tax = subTotal + TAX_RATE;
+      double tax = subTotal * TAX_RATE;
       double grandTotal = subTotal + tax;
       System.out.println("\n-- Current Totals --");
       System.out.printf("Subtotal: $%,.2f\n",subTotal);
