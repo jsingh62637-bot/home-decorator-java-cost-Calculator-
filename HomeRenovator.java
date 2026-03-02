@@ -10,8 +10,8 @@ public class HomeRenovator{
   private static final double HARDWOOD_PRICE = 5.50;
   private static final double TILE_PRICE = 3.90;
 
-  private static final double LAMNINATE_WASTE = 0.07;
-  private static final double HARDWOOD_PRICE = 0.10;
+  private static final double LAMINATE_WASTE = 0.07;
+  private static final double HARDWOOD_WASTE = 0.10;
   private static final double TILE_WASTE = 0.08;
   private static double subTotal = 0.0;
 
@@ -57,7 +57,7 @@ public class HomeRenovator{
     double length = getPositiveDouble(sc,"Enter room length (ft): ");
     double width = getPositiveDouble(sc,"Enter room width (ft): ");
     double height = getPositiveDouble(sc,"Enter room height (ft): ");
-    double length = getPositiveDouble(sc,"Enter room length (ft): ");
+    
     int doors = getNonNegativeInt(sc,"Enter number of doors: ");
     int windows = getNonNegativeInt(sc,"Enter number of windows: ");
 
@@ -70,7 +70,7 @@ public class HomeRenovator{
     double gallons = Math.ceil(netArea / PAINT_COVERAGE);
     double materialCost = gallons * PAINT_PRICE;
     double tax = materialCost * TAX_RATE;
-    double lineTotal = materilaCost + tax;
+    double lineTotal = materialCost + tax;
     subTotal += materialCost;
 System.out.printf("\nWall area: %.2f sq ft\n",wallArea);
 System.out.printf("Opening area: %.2f sq ft\n",openingArea);
@@ -90,16 +90,16 @@ System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",li
   System.out.println("3) Tile ($3.90/ sq ft, 8% waste");
          int type;
          double price = 0.0;
-         double waste = 0.0
+         double waste = 0.0;
            while(true){
         type = getIntInput(sc," Choice: ");
           if( type == 1) {
             price = LAMINATE_PRICE;
-            waste = LAMNATE_WASTE;
+            waste = LAMINATE_WASTE;
             break;
           }else if(type == 2){
           price = HARDWOOD_PRICE;
-          waste = HARDWOOD_WATE;
+          waste = HARDWOOD_WASTE;
             break;
           }else if(type == 3){
           price = TILE_PRICE;
@@ -114,7 +114,7 @@ System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",li
     double tax = materialCost * TAX_RATE;
     double lineTotal = materialCost + tax;
     subTotal += materialCost;
-    System.out.printf"\n Flooring area: %.2f sq ft\n",area);
+    System.out.printf("\n Flooring area: %.2f sq ft\n",area);
     System.out.printf("Adjusted area (with %.0f%% waste): %,2f sq ft\n",waste*100,adjustedArea);
     System.out.printf("Price per sq ft: $%.2f\n",price);
     System.out.printf("Material Cost: $%,.2f\n",materialCost);
@@ -123,7 +123,8 @@ System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",li
   }
   
     private static void viewTotals() {
-      double tax = subTotal + tax;
+      double tax = subTotal + TAX_RATE;
+      double grandTotal = subTotal + tax;
       System.out.println("\n-- Current Totals --");
       System.out.printf("Subtotal: $%,.2f\n",subTotal);
       System.out.printf("Tax: $%,.2f\n",tax);
