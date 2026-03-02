@@ -80,6 +80,54 @@ System.out.printf("Material cost(@ $%.2f/gal): $%.2f\n",PAINT_PRICE,materialCost
 System.out.printf("Line total(with tax): $%.2f\n",lineTotal);
 System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",lineTotal);
   }
+  private static void flooring (Scanner sc){
+  System.out.println("\n-- Flooring --");
+  double length = getPositiveDouble(sc,"Enter room length (ft): ");
+  double width = getPositiveDouble(sc,"Enter room width (ft): ");
+  System.out.println("\n Select flooring type: ");
+  System.out.println("1) Laminate ($2.25/sq ft, 7% waste");
+  System.out.println("2) Hardwood ($5.50/sq ft, 10% waste");
+  System.out.println("3) Tile ($3.90/ sq ft, 8% waste);
+         int type;
+         double price = 0.0;
+         double waste = 0.0
+           while(true){
+        type = getIntInput(sc," Choice: ");
+          if( type == 1) {
+            price = LAMINATE_PRICE;
+            waste = LAMNATE_WASTE;
+            break;
+          }else if(type == 2){
+          price = HARDWOOD_PRICE;
+          waste = HARDWOOD_WATE;
+            break;
+          }else if(type == 3){
+          price = TILE_PRICE;
+          waste = TILE_WASTE;
+          break;
+          }
+           { System.out.println("Invalid flooring option. Try again.");
+           }}
+    double area = length * width;
+    double adjustedArea = area * (1 + waste);
+    double materialCost = adjustedArea * price;
+    double tax = materialCost * TAX_RATE;
+    double lineTotal = materialCost + tax;
+    subTotal += materialCost;
+    System.out.println("\n Flooring area: %.2f sq ft\n",area);
+    
+    
+            
+
+
+
+
+
+
+
+
+    
+    
 
 
     
