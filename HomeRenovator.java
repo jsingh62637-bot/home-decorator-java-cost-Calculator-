@@ -114,7 +114,73 @@ System.out.printf("\n[Paint module complete Added $%,2f to running total.]\n",li
     double tax = materialCost * TAX_RATE;
     double lineTotal = materialCost + tax;
     subTotal += materialCost;
-    System.out.println("\n Flooring area: %.2f sq ft\n",area);
+    System.out.printf"\n Flooring area: %.2f sq ft\n",area);
+    System.out.printf("Adjusted area (with %.0f%% waste): %,2f sq ft\n",waste*100,adjustedArea);
+    System.out.printf("Price per sq ft: $%.2f\n",price);
+    System.out.printf("Material Cost: $%,.2f\n",materialCost);
+    System.out.printf("Line total (with tax): $%,.2f\n",lineTotal);
+    System.out.printf("\n[Flooring module complete. Added $%,.2f to running total.]\n",lineTotal);
+  }
+  
+    private static void viewTotals() {
+      double tax = subTotal + tax;
+      System.out.println("\n-- Current Totals --");
+      System.out.printf("Subtotal: $%,.2f\n",subTotal);
+      System.out.printf("Tax: $%,.2f\n",tax);
+      System.out.printf("Grand Total: $%,.2f\n",grandTotal);
+    }
+
+  private static double getPositiveDouble(Scanner sc,String prompt)
+  {
+         double value;
+         while(true){
+           System.out.print(prompt);
+           if(sc.hasNextDouble()){
+             value = sc.nextDouble();
+             sc.nextLine();
+             if(value > 0) {
+               return value; }
+           } else {
+             sc.nextLine();
+           }
+           System.out.println("Invalid input. Please enter a positive value.");
+         }}
+  private static int getNonNegativeInt(Scanner sc, String prompt)
+  {
+        int value;
+        while(true){
+          System.out.print(prompt);
+          if(sc.hasNextInt()){
+            value = sc.nextInt();
+            sc.nextLine();
+            if(value >= 0){
+              return value;
+            }
+          }else
+          { sc.nextLine(); }
+          System.out.println("Invalid input. Please enter 0 or greater.");
+        }}
+    private static int getIntInput(Scanner sc, String prompt)
+  {
+       int value;
+        while(true){
+          System.out.print(prompt);
+          if(sc.hasNextInt()){
+            value = sc.nextInt();
+            sc.nextLine();
+            return value; }
+          else {
+            sc.nextLine();
+        System.out.println("Invalid input. Please enter a valid number.");
+          }
+        }
+  }
+}
+
+            
+          
+          
+    
     
     
             
